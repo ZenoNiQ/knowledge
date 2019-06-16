@@ -1,1 +1,1 @@
-# [My Knowledge Wiki 📚](https://zenon.gitbook.io/zenon/)
+# [My Knowledge Wiki 📚](https://zenon.gitbook.io/)
