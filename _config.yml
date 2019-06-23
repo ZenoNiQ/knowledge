@@ -1,3 +1,4 @@
+baseurl: /starter
 prose:
   rooturl: ''
   siteurl: 'http://prose.github.io/starter/'
