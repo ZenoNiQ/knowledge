@@ -2,7 +2,7 @@ prose:
   rooturl: ''
   siteurl: 'http://prose.github.io/starter/'
   relativeLinks: 'http://prose.github.io/starter/links.jsonp'
-  media: 'media'
+  media: '_settings/media'
   ignore:
     - index.md
     - _config.yml
