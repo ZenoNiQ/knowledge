@@ -1,8 +1,6 @@
 prose:
-  rooturl: ''
-  siteurl: ''
   relativeLinks: 'http://prose.github.io/starter/links.jsonp'
-  media: 'settings/media'
+  media: '_settings/media'
   ignore:
     - index.md
     - _config.yml
