@@ -1,4 +1,5 @@
-https://vc.ru/flood/2316-smartsleep
+<https://vc.ru/flood/2316-smartsleep>
+
 # SmartSleep — приложение для полифазного сна
 ![]({{site.baseurl}}/https://habrastorage.org/web/240/712/2c4/2407122c4a13495198810b6258b249ad.png)
 ![c70a4e600c-original.jpg](/_settings/media/c70a4e600c-original.jpg)
@@ -7,5 +8,4 @@ https://raw.githubusercontent.com/ZenoNiQ/knowledge/master/_settings/media/c70a4
 
 Игорь и Евгений сами давно практикуют полифазный сон, а теперь решили помочь другим при помощи приложения SmartSleep. Сейчас они собирают деньги на проект при помощи краудфандинга. Мы решили узнать у ребят, почему это работает и как.
 
-## ZAgolovok2
 ## zagolovok 3
