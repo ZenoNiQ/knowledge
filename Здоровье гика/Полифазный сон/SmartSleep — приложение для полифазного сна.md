@@ -9,7 +9,3 @@ https://raw.githubusercontent.com/ZenoNiQ/knowledge/master/_settings/media/c70a4
 
 ## ZAgolovok2
 ## zagolovok 3
-
-
-
-цyyythghg
