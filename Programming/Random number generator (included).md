@@ -231,11 +231,11 @@ Among current systems, [BSD](https://rosettacode.org/wiki/BSD) might have the wo
 
 ![formula2](https://latex.codecogs.com/gif.latex?rand_%7Bn%7D%3Dstate_%7Bn%7D)
 
-[FreeBSD](/https://rosettacode.org/mw/index.php?title=FreeBSD&action=edit&redlink=1) switched to a different formula, but [NetBSD](/mw/index.php?title=NetBSD&action=edit&redlink=1 "NetBSD (page does not exist)") and [OpenBSD](/wiki/OpenBSD "OpenBSD") stayed with this formula. ([NetBSD rand.c](http://cvsweb.netbsd.org/bsdweb.cgi/src/lib/libc/stdlib/rand.c?only_with_tag=MAIN), [OpenBSD rand.c](https://www.openbsd.org/cgi-bin/cvsweb/src/lib/libc/stdlib/rand.c))
+[FreeBSD](/https://rosettacode.org/mw/index.php?title=FreeBSD&action=edit&redlink=1) switched to a different formula, but [NetBSD](https://rosettacode.org/mw/index.php?title=NetBSD&action=edit&redlink=1) and [OpenBSD](https://rosettacode.org/wiki/OpenBSD) stayed with this formula. ([NetBSD rand.c](http://cvsweb.netbsd.org/bsdweb.cgi/src/lib/libc/stdlib/rand.c?only_with_tag=MAIN), [OpenBSD rand.c](https://www.openbsd.org/cgi-bin/cvsweb/src/lib/libc/stdlib/rand.c))
 
-BSD rand() produces a cycling sequence of only <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow class="MJX-TeXAtom-ORD"><mstyle displaystyle="true" scriptlevel="0"><msup><mn>2</mn> <mrow class="MJX-TeXAtom-ORD"><mn>31</mn></mrow></msup></mstyle></mrow> <annotation encoding="application/x-tex">{\displaystyle 2^{31}}</annotation></semantics></math> <meta class="mwe-math-fallback-image-inline" aria-hidden="true" style="background-image: url('/mw/index.php?title=Special:MathShowImage&amp;hash=e825b8d1714e059277025ed9aee0ce4a&amp;mode=mathml'); background-repeat: no-repeat; background-size: 100% 100%; vertical-align: -0.338ex;height: 2.676ex; width: 3.064ex;"> possible states; this is already too short to produce good random numbers. The big problem with BSD rand() is that the low  <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics> <mrow class="MJX-TeXAtom-ORD"> <mstyle displaystyle="true" scriptlevel="0"> <mi>n</mi> </mstyle> </mrow> <annotation encoding="application/x-tex">{\displaystyle n}</annotation> </semantics></math> <meta class="mwe-math-fallback-image-inline" aria-hidden="true" style="background-image: url('/mw/index.php?title=Special:MathShowImage&amp;hash=7b8b965ad4bca0e41ab51de7b31363a1&amp;mode=mathml'); background-repeat: no-repeat; background-size: 100% 100%; vertical-align: -0.338ex;height: 1.676ex; width: 1.405ex;"> bits' cycle sequence length is only  <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics> <mrow class="MJX-TeXAtom-ORD"> <mstyle displaystyle="true" scriptlevel="0"> <msup> <mn>2</mn> <mrow class="MJX-TeXAtom-ORD"> <mi>n</mi> </mrow> </msup> </mstyle> </mrow> <annotation encoding="application/x-tex">{\displaystyle 2^{n}}</annotation> </semantics></math> <meta class="mwe-math-fallback-image-inline" aria-hidden="true" style="background-image: url('/mw/index.php?title=Special:MathShowImage&amp;hash=d1db0d9c696a8c056e7117dbbb4ef6db&amp;mode=mathml'); background-repeat: no-repeat; background-size: 100% 100%; vertical-align: -0.338ex;height: 2.343ex; width: 2.399ex;">. (This problem happens because the modulus  <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics> <mrow class="MJX-TeXAtom-ORD"> <mstyle displaystyle="true" scriptlevel="0"> <msup> <mn>2</mn> <mrow class="MJX-TeXAtom-ORD"> <mn>31</mn> </mrow> </msup> </mstyle> </mrow> <annotation encoding="application/x-tex">{\displaystyle 2^{31}}</annotation> </semantics></math> <meta class="mwe-math-fallback-image-inline" aria-hidden="true" style="background-image: url('/mw/index.php?title=Special:MathShowImage&amp;hash=e825b8d1714e059277025ed9aee0ce4a&amp;mode=mathml'); background-repeat: no-repeat; background-size: 100% 100%; vertical-align: -0.338ex;height: 2.676ex; width: 3.064ex;"> is a power of two.) The worst case, when  <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics> <mrow class="MJX-TeXAtom-ORD"> <mstyle displaystyle="true" scriptlevel="0"> <mi>n</mi> <mo>=</mo> <mn>1</mn> </mstyle> </mrow> <annotation encoding="application/x-tex">{\displaystyle n=1}</annotation> </semantics></math> <meta class="mwe-math-fallback-image-inline" aria-hidden="true" style="background-image: url('/mw/index.php?title=Special:MathShowImage&amp;hash=ab78ccfbcd04b1ba22eb9427251cb20d&amp;mode=mathml'); background-repeat: no-repeat; background-size: 100% 100%; vertical-align: -0.338ex;height: 2.176ex; width: 5.687ex;">, becomes obvious if one uses the low bit to flip a coin.
+BSD rand() produces a cycling sequence of only  becomes obvious if one uses the low bit to flip a coin.
 
-```
+```c++
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -243,18 +243,18 @@ BSD rand() produces a cycling sequence of only <math xmlns="http://www.w3.org/19
 int
 main()
 {
-	int i;
-	[srand](https://www.opengroup.org/onlinepubs/009695399/functions/srand.html)([time](https://www.opengroup.org/onlinepubs/009695399/functions/time.html)(NULL));
-	for (i = 0; i < 10; i++)
-		[puts](https://www.opengroup.org/onlinepubs/009695399/functions/puts.html)(([rand](https://www.opengroup.org/onlinepubs/009695399/functions/rand.html)() % 2) ? "heads" : "tails");
-	return 0;
+    int i;
+    srand(time(NULL));
+    for (i = 0; i < 10; i++)
+        puts((rand() % 2) ? "heads" : "tails");
+  return 0;
 }
 ```
 
 If the C compiler uses BSD rand(), then this program has only two possible outputs.
 
--   At even seconds: heads, tails, heads, tails, heads, tails, heads, tails, heads, tails.
--   At odd seconds: tails, heads, tails, heads, tails, heads, tails, heads, tails, heads.
+- At even seconds: heads, tails, heads, tails, heads, tails, heads, tails, heads, tails.
+- At odd seconds: tails, heads, tails, heads, tails, heads, tails, heads, tails, heads.
 
 The low bit manages a uniform distribution between heads and tails, but it has a period length of only 2: it can only flip a coin 2 times before it must repeat itself. Therefore it must alternate heads and tails. This is not a real coin, and these are not truly random flips.
 
@@ -263,48 +263,42 @@ In general, the low bits from BSD rand() are much less random than the high bits
 #### Microsoft rand()[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=14 "Edit section: Microsoft rand()")]
 
 Microsoft sets RAND_MAX to 32767 and uses this linear congruential formula:
-
--   <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow class="MJX-TeXAtom-ORD"><mstyle displaystyle="true" scriptlevel="0"><mi>s</mi> <mi>t</mi> <mi>a</mi> <mi>t</mi> <msub><mi>e</mi> <mrow class="MJX-TeXAtom-ORD"><mi>n</mi> <mo>+</mo> <mn>1</mn></mrow></msub> <mo>=</mo> <mn>214013</mn> <mo>×</mo> <mi>s</mi> <mi>t</mi> <mi>a</mi> <mi>t</mi> <msub><mi>e</mi> <mrow class="MJX-TeXAtom-ORD"><mi>n</mi></mrow></msub> <mo>+</mo> <mn>2531011</mn> <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">(</mo> <mi>mod</mi> <msup><mn>2</mn> <mrow class="MJX-TeXAtom-ORD"><mn>31</mn></mrow></msup> <mo stretchy="false">)</mo></mrow></mstyle></mrow> <annotation encoding="application/x-tex">{\displaystyle state_{n+1}=214013\times state_{n}+2531011{\pmod {2^{31}}}}</annotation></semantics></math> <meta class="mwe-math-fallback-image-inline" aria-hidden="true" style="background-image: url('/mw/index.php?title=Special:MathShowImage&amp;hash=f5a705cc35e58b81a87c3357241e7b45&amp;mode=mathml'); background-repeat: no-repeat; background-size: 100% 100%; vertical-align: -0.838ex;height: 3.176ex; width: 51.696ex;">
--   <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow class="MJX-TeXAtom-ORD"><mstyle displaystyle="true" scriptlevel="0"><mi>r</mi> <mi>a</mi> <mi>n</mi> <msub><mi>d</mi> <mrow class="MJX-TeXAtom-ORD"><mi>n</mi></mrow></msub> <mo>=</mo> <mi>s</mi> <mi>e</mi> <mi>e</mi> <msub><mi>d</mi> <mrow class="MJX-TeXAtom-ORD"><mi>n</mi></mrow></msub> <mo>÷</mo> <msup><mn>2</mn> <mrow class="MJX-TeXAtom-ORD"><mn>16</mn></mrow></msup></mstyle></mrow> <annotation encoding="application/x-tex">{\displaystyle rand_{n}=seed_{n}\div 2^{16}}</annotation></semantics></math> <meta class="mwe-math-fallback-image-inline" aria-hidden="true" style="background-image: url('/mw/index.php?title=Special:MathShowImage&amp;hash=44a8a37f4d706ee3929f97e4928afcf9&amp;mode=mathml'); background-repeat: no-repeat; background-size: 100% 100%; vertical-align: -0.671ex;height: 3.009ex; width: 20.907ex;">
-
-### POSIX drand48()[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=15 "Edit section: POSIX drand48()")]
-
+]
 POSIX adds the drand48() family to <stdlib.h>.
 
--   `void srand48(long seed)` begins a new sequence.
--   `double drand48(void)` returns a random double in [0.0, 1.0).
--   `long lrand48(void)` returns a random long in [0, 2**31).
--   `long mrand48(void)` returns a random long in [-2**31, 2**31).
+- `void srand48(long seed)` begins a new sequence.
+- `double drand48(void)` returns a random double in [0.0, 1.0).
+- `long lrand48(void)` returns a random long in [0, 2**31).
+- `long mrand48(void)` returns a random long in [-2**31, 2**31).
 
 This family uses a 48-bit linear congruential generator with this formula:
 
--   <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow class="MJX-TeXAtom-ORD"><mstyle displaystyle="true" scriptlevel="0"><msub><mi>r</mi> <mrow class="MJX-TeXAtom-ORD"><mi>n</mi> <mo>+</mo> <mn>1</mn></mrow></msub> <mo>=</mo> <mn>25214903917</mn> <mo>×</mo> <msub><mi>r</mi> <mrow class="MJX-TeXAtom-ORD"><mi>n</mi></mrow></msub> <mo>+</mo> <mn>11</mn> <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">(</mo> <mi>mod</mi> <msup><mn>2</mn> <mrow class="MJX-TeXAtom-ORD"><mn>48</mn></mrow></msup> <mo stretchy="false">)</mo></mrow></mstyle></mrow> <annotation encoding="application/x-tex">{\displaystyle r_{n+1}=25214903917\times r_{n}+11{\pmod {2^{48}}}}</annotation></semantics></math> <meta class="mwe-math-fallback-image-inline" aria-hidden="true" style="background-image: url('/mw/index.php?title=Special:MathShowImage&amp;hash=70654ccd8f70d87632565bcc6ec12abb&amp;mode=mathml'); background-repeat: no-repeat; background-size: 100% 100%; vertical-align: -0.838ex;height: 3.176ex; width: 43.544ex;">
-
-[C++](/wiki/Category:C%2B%2B "Category:C++")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=16 "Edit section: C++")]
--------------------------------------------------------------------------------------------------------------------------------------------------------
+[C++](https://rosettacode.org/wiki/Category:C%2B%2B)
+------------------------------------
 
 As part of the C++11 specification the language now includes various forms of random number generation.
 
 While the default engine is implementation specific (ex, unspecified), the following Pseudo-random generators are available in the standard:
 
--   Linear congruential (minstd_rand0, minstd_rand)
--   Mersenne twister (mt19937, mt19937_64)
--   Subtract with carry (ranlux24_base, ranlux48_base)
--   Discard block (ranlux24, ranlux48)
--   Shuffle order (knuth_b)
+- Linear congruential (minstd_rand0, mitd_rand)
+- Mersenne twister (mt19937, mt19937_64)
+- Subtract with carry (ranlux24_base, raux48_base)
+- Discard block (ranlux24, ranlux48)
+- Shuffle order (knuth_b)
 
 Additionally, the following distributions are supported:
 
--   Uniform distributions: uniform_int_distribution, uniform_real_distribution
--   Bernoulli distributions: bernoulli_distribution, geometric_distribution, binomial_distribution, negative_binomial_distribution
--   Poisson distributions: poisson_distribution, gamma_distribution, exponential_distribution, weibull_distribution, extreme_value_distribution
--   Normal distributions: normal_distribution, fisher_f_distribution, cauchy_distribution, lognormal_distribution, chi_squared_distribution, student_t_distribution
--   Sampling distributions: discrete_distribution, piecewise_linear_distribution, piecewise_constant_distribution
+- Uniform distributions: uniform_int_distribution, uniform_real_distribution
+- Bernoulli distributions: bernoulli_distribution, geometric_distribution, binomial_distribution, negative_binomial_distribution
+- Poisson distributions: poisson_distribution, gamma_distribution, exponential_distribution, weibull_distribution, extreme_value_distribution
+- Normal distributions: normal_distribution, fisher_f_distribution, cauchy_distribution, lognormal_distribution, chi_squared_distribution, student_t_distribution
+- Sampling distributions: discrete_distribution, piecewise_linear_distribution, piecewise_constant_distribution
 
 Example of use:
 
 **Works with**: [C++11](/wiki/C%2B%2B11 "C++11")
-```
+
+```c++
 #include <iostream>
 #include <string>
 #include <random>
@@ -335,7 +329,7 @@ See Java.
 
 CMake has a random *string* generator.
 
-```
+```bash
 # Show random integer from 0 to 9999.
 [string](https://www.cmake.org/cmake/help/cmake2.6docs.html#command:string)(RANDOM LENGTH 4 ALPHABET 0123456789 number)
 [math](https://www.cmake.org/cmake/help/cmake2.6docs.html#command:math)(EXPR number "${number} + 0")  # Remove extra leading 0s.
@@ -353,7 +347,7 @@ CMake 2.8.5 tries a [secure seed](/wiki/Random_number_generator_(device) "Random
 
 The easiest way to generate random numbers in Common Lisp is to use the built-in rand function after seeding the random number generator. For example, the first line seeds the random number generator and the second line generates a number from 0 to 9
 
-```
+```bash
 (setf *random-state* (make-random-state t))
 (rand 10)
 ```
@@ -372,7 +366,7 @@ The generators feature a number of well-known and well-documented methods of gen
 
 The standard implementation, `[vu](/wiki/Vu "Vu")`, uses a Mersenne twister.
 
-```
+```bash
 !print random-int # prints a 32-bit random integer
 ```
 
@@ -383,7 +377,7 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Linear_congruential_gener
 
 Random functions:
 
-```
+```bash
  function Random : Extended;
  function Random ( LimitPlusOne  : Integer ) : Integer;
  procedure Randomize;
@@ -392,7 +386,7 @@ Random functions:
 
 Based on the values given in the wikipedia entry here is a Delphi compatible implementation for use in other pascal dialects.
 
-```
+```bash
 
 {$ifdef fpc}{$mode objfpc}{$endif}
 
@@ -432,7 +426,7 @@ DWScript currently uses a 64bit [XorShift](https://en.wikipedia.org/wiki/Xorshif
 
 EchoLisp uses an ARC4 (or RCA4) implementation by David Bau, which replaces the JavaScript Math.random(). Thanks to him. [[5]](https://github.com/davidbau/seedrandom). Some examples :
 
-```
+```bash
 
 (random-seed "albert")
 (random) → 0.9672510261922906 ; random float in [0 ... 1[
@@ -449,7 +443,7 @@ EchoLisp uses an ARC4 (or RCA4) implementation by David Bau, which replaces the 
 
 ELENA 4.x :
 
-```
+```bash
 import extensions;
 
 public program()
@@ -459,13 +453,7 @@ public program()
 }
 ```
 
-<dl>
-
-<dt>Output:</dt>
-
-</dl>
-
-```
+```bash
 0.706398
 46
 
@@ -476,8 +464,7 @@ public program()
 
 Elixir does not come with its own module for random number generation. But you can use the appropriate Erlang functions instead. Some examples:
 
-```
-
+```bash
 # Seed the RNG
 :random.seed(:erlang.now())
 
@@ -486,7 +473,6 @@ Elixir does not come with its own module for random number generation. But you c
 
 # Float between 0.0 and 1.0
 :random.uniform()
-
 ```
 
 For further information, read the Erlang section.
@@ -504,16 +490,13 @@ It should be noted that this random number generator is not cryptographically st
 
 Seed with a fixed known value triplet A1, A2, A3:
 
-```
-
+```bash
 [random](http://erlang.org/doc/man/random.html):seed(A1, A2, A3)
-
 ```
 
 Example with the running time:
 
-```
-
+```bash
 ...
 {A1,A2,A3} = [erlang](http://erlang.org/doc/man/erlang.html):now(),
 [random](http://erlang.org/doc/man/random.html):seed(A1, A2, A3),
@@ -525,7 +508,7 @@ Example with the running time:
 
 Get a random float value between 0.0 and 1.0:
 
-```
+```bash
 
 Rfloat = [random](http://erlang.org/doc/man/random.html):uniform(),
 
@@ -533,7 +516,7 @@ Rfloat = [random](http://erlang.org/doc/man/random.html):uniform(),
 
 Get a random integer value between 1 and N (N is an integer >= 1):
 
-```
+```bash
 
 Rint = [random](http://erlang.org/doc/man/random.html):uniform(N),
 
@@ -554,7 +537,7 @@ The default RNG used when the `random` vocabulary is used, is the [Mersenne twis
 
 Fortran has intrinsic random_seed() and random_number() subroutines. Used algorithm of the pseudorandom number generator is compiler dependent (not specified in ISO Fortran Standard, see ISO/IEC 1539-1:2010 (E), 13.7.135 RANDOM NUMBER). For algorithm in GNU gfortran see <https://gcc.gnu.org/onlinedocs/gfortran/RANDOM_005fNUMBER.html> Note that with the GNU gfortran compiler program needs to call random_seed with a random PUT= argument to get a pseudorandom number otherwise the sequence always starts with the same number. Intel compiler ifort reinitializes the seed randomly without PUT argument to random value using the system date and time. Here we are seeding random_seed() with some number obtained from the Linux urandom device.
 
-```
+```bash
 
 program rosetta_random
    implicit none
@@ -612,7 +595,7 @@ FreePascal's function random uses the MersenneTwister (for further details, see 
 
 Syntax:
 
-```
+```bash
 randomInteger = rnd(expr)
 
 ```
@@ -621,7 +604,7 @@ This function returns a pseudo-random long integer uniformly distributed in the 
 
 Syntax:
 
-```
+```bash
 random (or randomize) [expr]
 
 ```
@@ -630,35 +613,35 @@ This statement "seeds" the random number generator: this affects the sequence of
 
 Example 1:
 
-```
+```bash
 random 375  // using seed number
 
 ```
 
 Example 2:
 
-```
+```bash
 random      // current system time used as seed
 
 ```
 
 Example: To get a random integer between two arbitrary limits min and max, use the following statement. (Note: max - min must be less than or equal to 65536.):
 
-```
+```bash
 randomInteger = rnd(max - min + 1) + min - 1
 
 ```
 
 To get a random fraction, greater than or equal to zero and less than 1, use this statement:
 
-```
+```bash
 frac! = (rnd(65536)-1)/65536.0
 
 ```
 
 To get a random long integer in the range 1 through 2,147,483,647, use this statement:
 
-```
+```bash
 randomInteger& = ((rnd(65536) - 1)<<15) + rnd(32767)
 
 ```
@@ -668,7 +651,7 @@ randomInteger& = ((rnd(65536) - 1)<<15) + rnd(32767)
 
 GAP may use two algorithms : MersenneTwister, or algorithm A in section 3.2.2 of TAOCP (which is the default). One may create several *random sources* in parallel, or a global one (based on the TAOCP algorithm).
 
-```
+```bash
 # Creating a random source
 rs := RandomSource(IsMersenneTwister);
 
@@ -681,7 +664,7 @@ Random(1, 10);
 
 One can get random elements from many objects, including lists
 
-```
+```bash
 
 Random([1, 10, 100]);
 
@@ -697,9 +680,9 @@ Random(Integers mod 23);
 
 Go has two random number packages in the standard library and another package in the "subrepository."
 
-1.  [math/rand](https://golang.org/pkg/math/rand/) in the standard library provides general purpose random number support, implementing some sort of feedback shift register. (It uses a large array commented "feeback register" and has variables named "tap" and "feed.") Comments in the code attribute the algorithm to DP Mitchell and JA Reeds. A little more insight is in [this issue](https://github.com/golang/go/issues/21835) in the Go issue tracker.
-2.  [crypto/rand](https://golang.org/pkg/crypto/rand/), also in the standard library, says it "implements a cryptographically secure pseudorandom number generator." I think though it should say that it *accesses* a cryptographically secure pseudorandom number generator. It uses `/dev/urandom` on Unix-like systems and the CryptGenRandom API on Windows.
-3.  [x/exp/rand](https://godoc.org/golang.org/x/exp/rand) implements the Permuted Congruential Generator which is also described in the issue linked above.
+1. [math/rand](https://golang.org/pkg/math/rand/) in the standard library provides general purpose random number support, implementing some sort of feedback shift register. (It uses a large array commented "feeback register" and has variables named "tap" and "feed.") Comments in the code attribute the algorithm to DP Mitchell and JA Reeds. A little more insight is in [this issue](https://github.com/golang/go/issues/21835) in the Go issue tracker.
+2. [crypto/rand](https://golang.org/pkg/crypto/rand/), also in the standard library, says it "implements a cryptographically secure pseudorandom number generator." I think though it should say that it *accesses* a cryptographically secure pseudorandom number generator. It uses `/dev/urandom` on Unix-like systems and the CryptGenRandom API on Windows.
+3. [x/exp/rand](https://godoc.org/golang.org/x/exp/rand) implements the Permuted Congruential Generator which is also described in the issue linked above.
 
 [Golfscript](/wiki/Category:Golfscript "Category:Golfscript")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=37 "Edit section: Golfscript")]
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -784,32 +767,32 @@ Maxima uses a Lisp implementation of the Mersenne Twister. See `? random` for he
 
 There are also random generators for several [distributions](https://en.wikipedia.org/wiki/Probability_distribution "wp:Probability distribution") in package `distrib` :
 
--   `[random_bernoulli](https://en.wikipedia.org/wiki/Bernoulli_distribution "wp:Bernoulli distribution")`
--   `[random_beta](https://en.wikipedia.org/wiki/Beta_distribution "wp:Beta distribution")`
--   `[random_binomial](https://en.wikipedia.org/wiki/Binomial_distribution "wp:Binomial distribution")`
--   `[random_cauchy](https://en.wikipedia.org/wiki/Cauchy_distribution "wp:Cauchy distribution")`
--   `[random_chi2](https://en.wikipedia.org/wiki/Chi-squared_distribution "wp:Chi-squared distribution")`
--   `[random_continuous_uniform](https://en.wikipedia.org/wiki/Uniform_distribution_(continuous) "wp:Uniform distribution (continuous)")`
--   `[random_discrete_uniform](https://en.wikipedia.org/wiki/Uniform_distribution_(discrete) "wp:Uniform distribution (discrete)")`
--   `[random_exp](https://en.wikipedia.org/wiki/Exponential_distribution "wp:Exponential distribution")`
--   `[random_f](https://en.wikipedia.org/wiki/F-distribution "wp:F-distribution")`
--   `[random_gamma](https://en.wikipedia.org/wiki/Gamma_distribution "wp:Gamma distribution")`
--   `[random_general_finite_discrete](https://en.wikipedia.org/wiki/Categorical_distribution "wp:Categorical distribution")`
--   `[random_geometric](https://en.wikipedia.org/wiki/Geometric_distribution "wp:Geometric distribution")`
--   `[random_gumbel](https://en.wikipedia.org/wiki/Gumbel_distribution "wp:Gumbel distribution")`
--   `[random_hypergeometric](https://en.wikipedia.org/wiki/Hypergeometric_distribution "wp:Hypergeometric distribution")`
--   `[random_laplace](https://en.wikipedia.org/wiki/Laplace_distribution "wp:Laplace distribution")`
--   `[random_logistic](https://en.wikipedia.org/wiki/Logistic_distribution "wp:Logistic distribution")`
--   `[random_lognormal](https://en.wikipedia.org/wiki/Lognormal_distribution "wp:Lognormal distribution")`
--   `[random_negative_binomial](https://en.wikipedia.org/wiki/Negative_binomial_distribution "wp:Negative binomial distribution")`
--   `[random_noncentral_chi2](https://en.wikipedia.org/wiki/Noncentral_chi-squared_distribution "wp:Noncentral chi-squared distribution")`
--   `[random_noncentral_student_t](https://en.wikipedia.org/wiki/Noncentral_t-distribution "wp:Noncentral t-distribution")`
--   `[random_normal](https://en.wikipedia.org/wiki/Normal_distribution "wp:Normal distribution")`
--   `[random_pareto](https://en.wikipedia.org/wiki/Pareto_distribution "wp:Pareto distribution")`
--   `[random_poisson](https://en.wikipedia.org/wiki/Poisson_distribution "wp:Poisson distribution")`
--   `[random_rayleigh](https://en.wikipedia.org/wiki/Rayleigh_distribution "wp:Rayleigh distribution")`
--   `[random_student_t](https://en.wikipedia.org/wiki/Student%27s_t-distribution "wp:Student's t-distribution")`
--   `[random_weibull](https://en.wikipedia.org/wiki/Weibull_distribution "wp:Weibull distribution")`
+- `[random_bernoulli](https://en.wikipedia.org/wiki/Bernoulli_distribution "wp:Bernoulli distribution")`
+- `[random_beta](https://en.wikipedia.org/wiki/Beta_distribution "wp:Beta distribution")`
+- `[random_binomial](https://en.wikipedia.org/wiki/Binomial_distribution "wp:Binomial distribution")`
+- `[random_cauchy](https://en.wikipedia.org/wiki/Cauchy_distribution "wp:Cauchy distribution")`
+- `[random_chi2](https://en.wikipedia.org/wiki/Chi-squared_distribution "wp:Chi-squared distribution")`
+- `[random_continuous_uniform](https://en.wikipedia.org/wiki/Uniform_distribution_(continuous) "wp:Uniform distribution (continuous)")`
+- `[random_discrete_uniform](https://en.wikipedia.org/wiki/Uniform_distribution_(discrete) "wp:Uniform distribution (discrete)")`
+- `[random_exp](https://en.wikipedia.org/wiki/Exponential_distribution "wp:Exponential distribution")`
+- `[random_f](https://en.wikipedia.org/wiki/F-distribution "wp:F-distribution")`
+- `[random_gamma](https://en.wikipedia.org/wiki/Gamma_distribution "wp:Gamma distribution")`
+- `[random_general_finite_discrete](https://en.wikipedia.org/wiki/Categorical_distribution "wp:Categorical distribution")`
+- `[random_geometric](https://en.wikipedia.org/wiki/Geometric_distribution "wp:Geometric distribution")`
+- `[random_gumbel](https://en.wikipedia.org/wiki/Gumbel_distribution "wp:Gumbel distribution")`
+- `[random_hypergeometric](https://en.wikipedia.org/wiki/Hypergeometric_distribution "wp:Hypergeometric distribution")`
+- `[random_laplace](https://en.wikipedia.org/wiki/Laplace_distribution "wp:Laplace distribution")`
+- `[random_logistic](https://en.wikipedia.org/wiki/Logistic_distribution "wp:Logistic distribution")`
+- `[random_lognormal](https://en.wikipedia.org/wiki/Lognormal_distribution "wp:Lognormal distribution")`
+- `[random_negative_binomial](https://en.wikipedia.org/wiki/Negative_binomial_distribution "wp:Negative binomial distribution")`
+- `[random_noncentral_chi2](https://en.wikipedia.org/wiki/Noncentral_chi-squared_distribution "wp:Noncentral chi-squared distribution")`
+- `[random_noncentral_student_t](https://en.wikipedia.org/wiki/Noncentral_t-distribution "wp:Noncentral t-distribution")`
+- `[random_normal](https://en.wikipedia.org/wiki/Normal_distribution "wp:Normal distribution")`
+- `[random_pareto](https://en.wikipedia.org/wiki/Pareto_distribution "wp:Pareto distribution")`
+- `[random_poisson](https://en.wikipedia.org/wiki/Poisson_distribution "wp:Poisson distribution")`
+- `[random_rayleigh](https://en.wikipedia.org/wiki/Rayleigh_distribution "wp:Rayleigh distribution")`
+- `[random_student_t](https://en.wikipedia.org/wiki/Student%27s_t-distribution "wp:Student's t-distribution")`
+- `[random_weibull](https://en.wikipedia.org/wiki/Weibull_distribution "wp:Weibull distribution")`
 
 Note: the package `distrib` also has functions starting with `pdf`, `cdf`, `quantile`, `mean`, `var`, `std`, `skewness` or `kurtosis` instead of `random`, except the Cauchy distribution, which does not have [moments](https://en.wikipedia.org/wiki/Moment_(mathematics) "wp:Moment (mathematics)").
 
@@ -833,8 +816,8 @@ As NetRexx runs in the JVM it simply leverages the Java library. See [Java](#Jav
 
 There are two PRNGs provided in the standard library:
 
--   **random** : Based on xoroshiro128+ (xor/rotate/shift/rotate), see [here](http://xoroshiro.di.unimi.it/).
--   **mersenne** : The Mersenne Twister.
+- **random** : Based on xoroshiro128+ (xor/rotate/shift/rotate), see [here](http://xoroshiro.di.unimi.it/).
+- **mersenne** : The Mersenne Twister.
 
 [OCaml](/wiki/Category:OCaml "Category:OCaml")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=56 "Edit section: OCaml")]
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -854,9 +837,9 @@ Oz provides a binding to the C `[rand](https://www.opengroup.org/onlinepubs/0000
 [PARI/GP](/wiki/Category:PARI/GP "Category:PARI/GP")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=59 "Edit section: PARI/GP")]
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-`random` uses Richard Brent's [xorgens](http://wwwmaths.anu.edu.au/~brent/random.html). It's a member of the xorshift class of PRNGs and provides good, fast pseudorandomness (passing the BigCrush test, unlike the Mersenne twister), but it is not cryptographically strong. As implemented in PARI, its period is "at least <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow class="MJX-TeXAtom-ORD"><mstyle displaystyle="true" scriptlevel="0"><msup><mn>2</mn> <mrow class="MJX-TeXAtom-ORD"><mn>4096</mn></mrow></msup> <mo>-</mo> <mn>1</mn></mstyle></mrow> <annotation encoding="application/x-tex">{\displaystyle 2^{4096}-1}</annotation></semantics></math> <meta class="mwe-math-fallback-image-inline" aria-hidden="true" style="background-image: url('/mw/index.php?title=Special:MathShowImage&amp;hash=046c273d8d303ccde0739a4ffa55799f&amp;mode=mathml'); background-repeat: no-repeat; background-size: 100% 100%; vertical-align: -0.338ex;height: 2.676ex; width: 8.746ex;">".
+`random` uses Richard Brent's [xorgens](http://wwwmaths.anu.edu.au/~brent/random.html). It's a member of the xorshift class of PRNGs and provides good, fast pseudorandomness (passing the BigCrush test, unlike the Mersenne twister), but it is not cryptographically strong. As implemented in PARI, its period is "at least.
 
-```
+```bash
 setrand(3)
 random(6)+1
 \\ chosen by fair dice roll.
@@ -870,7 +853,7 @@ See <#Delphi> and [#Free Pascal](#Free_Pascal).
 
 Random functions:
 
-```
+```bash
  function  Random(l: LongInt) : LongInt;
  function  Random : Real;
  procedure Randomize;
@@ -883,8 +866,6 @@ Random functions:
 Previous to Perl 5.20.0 (May 2014), Perl's `[rand](https://perldoc.perl.org/functions/rand.html)` function will try and call `[drand48](https://www.opengroup.org/onlinepubs/007908775/xsh/drand48.html)`, `[random](https://www.opengroup.org/onlinepubs/000095399/functions/random.html)` or `[rand](https://www.opengroup.org/onlinepubs/000095399/functions/rand.html)` from the C library `[stdlib.h](https://www.opengroup.org/onlinepubs/000095399/basedefs/stdlib.h.html)` in that order.
 
 Beginning with Perl 5.20.0, a drand48() implementation is built into Perl and used on all platforms. The implementation is from FreeBSD and uses a 48-bit linear congruential generator with this formula:
-
--   <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow class="MJX-TeXAtom-ORD"><mstyle displaystyle="true" scriptlevel="0"><msub><mi>r</mi> <mrow class="MJX-TeXAtom-ORD"><mi>n</mi> <mo>+</mo> <mn>1</mn></mrow></msub> <mo>=</mo> <mn>25214903917</mn> <mo>×</mo> <msub><mi>r</mi> <mrow class="MJX-TeXAtom-ORD"><mi>n</mi></mrow></msub> <mo>+</mo> <mn>11</mn> <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">(</mo> <mi>mod</mi> <msup><mn>2</mn> <mrow class="MJX-TeXAtom-ORD"><mn>48</mn></mrow></msup> <mo stretchy="false">)</mo></mrow></mstyle></mrow> <annotation encoding="application/x-tex">{\displaystyle r_{n+1}=25214903917\times r_{n}+11{\pmod {2^{48}}}}</annotation></semantics></math> <meta class="mwe-math-fallback-image-inline" aria-hidden="true" style="background-image: url('/mw/index.php?title=Special:MathShowImage&amp;hash=70654ccd8f70d87632565bcc6ec12abb&amp;mode=mathml'); background-repeat: no-repeat; background-size: 100% 100%; vertical-align: -0.838ex;height: 3.176ex; width: 43.544ex;">
 
 Seeds for drand48 are 32-bit and the initial seed uses 4 bytes of data read from /dev/urandom if possible; a 32-bit mix of various system values otherwise.
 
@@ -919,7 +900,7 @@ Values produced by IBM Visualage PL/I compiler built-in random number generator 
 
 It uses a multiplicative congruential method:
 
-```
+```bash
 seed(x) = mod(950706376 * seed(x-1), 2147483647)
 random(x) = seed(x) / 2147483647
 ```
@@ -933,7 +914,7 @@ Oracle Database has two packages that can be used for random numbers generation.
 
 The DBMS_RANDOM package provides a built-in random number generator. This package is not intended for cryptography. It will automatically initialize with the date, user ID, and process ID if no explicit initialization is performed. If this package is seeded twice with the same seed, then accessed in the same way, it will produce the same results in both cases.
 
-```
+```bash
 DBMS_RANDOM.RANDOM --produces integers in [-2^^31, 2^^31).
 DBMS_RANDOM.VALUE  --produces numbers in [0,1) with 38 digits of precision.
 DBMS_RANDOM.NORMAL --produces normal distributed numbers with a mean of 0 and a variance of 1
