@@ -110,18 +110,18 @@ Contents
 - [87 zkl](#zkl)
 - [88 ZX Spectrum Basic](#ZX_Spectrum_Basic)
 
-[8th](/wiki/Category:8th "Category:8th")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=1 "Edit section: 8th")]
---------------------------------------------------------------------------------------------------------------------------------------------------
+[8th](https://rosettacode.org/wiki/Category:8th)
+-----
 
 The default random number generator in 8th is a cryptographically strong one using [Fortuna](https://en.wikipedia.org/wiki/Fortuna_%28PRNG%29), which is seeded from the system's entropy provider. An additional random generator (which is considerably faster) is a [PCG](http://www.pcg-random.org/), though it is not cryptographically strong.
 
-[ActionScript](/wiki/Category:ActionScript "Category:ActionScript")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=2 "Edit section: ActionScript")]
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[ActionScript](https://rosettacode.org/wiki/Category:ActionScript)
+--------------------------------------------
 
 In both Actionscript 2 and 3, the type of pseudorandom number generator is implementation-defined. This number generator is accessed through the Math.random() function, which returns a double greater than or equal to 0 and less than 1.[[1]](http://livedocs.adobe.com/flash/9.0/ActionScriptLangRefV3/Math.html#random%28%29)[[2]](http://flash-reference.icod.de/Math.html#random%28%29) In Actionscript 2, the global random() function returns an integer greater than or equal to 0 and less than the given argument, but it is deprecated and not recommended.[[3]](http://flash-reference.icod.de/global_functions.html#random())
 
-[Ada](/wiki/Category:Ada "Category:Ada")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=3 "Edit section: Ada")]
---------------------------------------------------------------------------------------------------------------------------------------------------
+[Ada](https://rosettacode.org/wiki/Category:Ada)
+------------------------------------------------
 
 The Ada standard defines Random Number Generation in Annex A.5.2. There are two kinds of RNGs, Ada.Numerics.Float_Random for floating point values from 0.0 to 1.0, and Ada.Numerics.Discrete_Random for pseudo-random values of enumeration types (including integer types). It provides facilities to initialize the generator and to save it's state.
 
@@ -133,15 +133,15 @@ The used algorithm is implementation defined. The standard says: "To enable the 
 - [Ada 2005 RM - A.5.2 Random Number Generation](http://www.adaic.com/standards/05rm/html/RM-A-5-2.html)
 - [Ada 2005 RM - A.5.2 Random Number Generation](http://www.adaic.org/resources/add_content/standards/12rm/html/RM-A-5-2.html)
 
-[ALGOL 68](/wiki/Category:ALGOL_68 "Category:ALGOL 68")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=4 "Edit section: ALGOL 68")]
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[ALGOL 68](https://rosettacode.org/wiki/Category:ALGOL_68)
+--------
 
-Details of the random number generator are in the Revised Reports sections: 10.2.1\. and 10.5.1.
+Details of the random number generator are in the Revised Reports sections: 10.2.1. and 10.5.1.
 
 - [10.2\. The standard prelude - 10.2.1\. Environment enquiries](http://vestein.arb-phys.uni-dortmund.de/~wb/RR/rrA2.html)
 - [10.5\. The particular preludes and postlude - 10.5.1\. The particular preludes](http://vestein.arb-phys.uni-dortmund.de/~wb/RR/rrA5.html)
 
-```
+```bash
 PROC ℒ next random = (REF ℒ INT a)ℒ REAL: ( a :=
 ¢ the next pseudo-random ℒ integral value after 'a' from a
 uniformly distributed sequence on the interval [ℒ 0,ℒ maxint] ¢;
@@ -162,19 +162,19 @@ Algol68 supports random number generation for all precisions available for the s
 
 For an ASCII implementation and for **long real** precision these routines would appears as:
 
-```
+```bash
 PROC long next random = (REF LONG INT a)LONG REAL: # some suitable next random number #;
 INT long last random := # some initial random number #;
 PROC long random = LONG REAL: long next random(long last random);
 ```
 
-[AutoHotkey](/wiki/Category:AutoHotkey "Category:AutoHotkey")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=5 "Edit section: AutoHotkey")]
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[AutoHotkey](https://rosettacode.org/wiki/Category:AutoHotkey)
+----------
 
 The built-in command [Random](http://www.autohotkey.com/docs/commands/Random.htm) generates a pseudo-random number using Mersenne Twister "MT19937" (see documentation).
 
-[AWK](/wiki/Category:AWK "Category:AWK")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=6 "Edit section: AWK")]
---------------------------------------------------------------------------------------------------------------------------------------------------
+[AWK](https://rosettacode.org/wiki/Category:AWK)
+------------------------------------------------
 
 The built-in command "rand" generates a pseudo-random uniform distributed random variable. More information is available from the documentation of [gawk](https://www.gnu.org/software/gawk/manual/html_node/Numeric-Functions.html).
 
@@ -182,24 +182,24 @@ It is important that the RNG is seeded with the funtions "srand", otherwise, the
 
 Example usage: see [#UNIX_Shell](https://rosettacode.org/wiki/Random_number_generator_(included)#UNIX_Shell)
 
-[BASIC](/wiki/Category:BASIC "Category:BASIC")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=7 "Edit section: BASIC")]
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+[BASIC](https://rosettacode.org/wiki/Category:BASIC)
+----------------------------------------------------
 
 The RND function generates a pseudo random number greater than or equal to zero, but less than one. The implementation is machine specific based on contents of the ROM and there is no fixed algorithm.
 
-[Batch File](/wiki/Category:Batch_File "Category:Batch File")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=8 "Edit section: Batch File")]
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[Batch File](https://rosettacode.org/wiki/Category:Batch_File)
+------------------------------------------
 
 Windows batch files can use the `%RANDOM%` pseudo-variable which returns a pseudo-random number between 0 and 32767\. Behind the scenes this is just a call to the C runtime's `rand()` function which uses an LCG in this case:
 
-<dl>
+```\LaTeX
+$$\int_\Omega \nabla u \cdot \nabla v~dx = \int_\Omega fv~dx$$
+```
 
-<dd><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow class="MJX-TeXAtom-ORD"><mstyle displaystyle="true" scriptlevel="0"><msub><mi>X</mi> <mrow class="MJX-TeXAtom-ORD"><mi>n</mi> <mo>+</mo> <mn>1</mn></mrow></msub> <mo>=</mo> <msub><mi>X</mi> <mrow class="MJX-TeXAtom-ORD"><mi>n</mi></mrow></msub> <mo>⋅</mo> <mn>214013</mn> <mo>+</mo> <mn>2531011</mn> <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">(</mo> <mi>mod</mi> <msup><mn>2</mn> <mrow class="MJX-TeXAtom-ORD"><mn>15</mn></mrow></msup> <mo stretchy="false">)</mo></mrow></mstyle></mrow> <annotation encoding="application/x-tex">{\displaystyle X_{n+1}=X_{n}\cdot 214013+2531011{\pmod {2^{15}}}}</annotation></semantics></math> <meta class="mwe-math-fallback-image-inline" aria-hidden="true" style="background-image: url('/mw/index.php?title=Special:MathShowImage&amp;hash=a66f9fa2614ede057fb9e87345c79850&amp;mode=mathml'); background-repeat: no-repeat; background-size: 100% 100%; vertical-align: -0.838ex;height: 3.176ex; width: 44.134ex;"></dd>
+[equation](https://latex.codecogs.com/gif.latex?X_%7Bn&plus;1%7D%3DX_%7Bn%7D*214013&plus;2531011*%28mod*2%5E%7B15%7D%29)
 
-</dl>
-
-[BBC BASIC](/wiki/Category:BBC_BASIC "Category:BBC BASIC")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=9 "Edit section: BBC BASIC")]
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[BBC BASIC]()
+-----------------
 
 The RND function uses a 33-bit maximal-length Linear Feedback Shift Register (LFSR), with 32-bits being used to provide the result. Hence the sequence length is 2^33-1, during which the value zero is returned once and all non-zero 32-bit values are each returned twice.
 
