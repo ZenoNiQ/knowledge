@@ -192,19 +192,15 @@ The RND function generates a pseudo random number greater than or equal to zero,
 
 Windows batch files can use the `%RANDOM%` pseudo-variable which returns a pseudo-random number between 0 and 32767\. Behind the scenes this is just a call to the C runtime's `rand()` function which uses an LCG in this case:
 
-```\LaTeX
-$$\int_\Omega \nabla u \cdot \nabla v~dx = \int_\Omega fv~dx$$
-```
-
 ![equation](https://latex.codecogs.com/gif.latex?X_%7Bn&plus;1%7D%3DX_%7Bn%7D*214013&plus;2531011*%28mod*2%5E%7B15%7D%29)
 
-[BBC BASIC]()
+[BBC BASIC](https://rosettacode.org/wiki/Category:BBC_BASIC)
 -----------------
 
 The RND function uses a 33-bit maximal-length Linear Feedback Shift Register (LFSR), with 32-bits being used to provide the result. Hence the sequence length is 2^33-1, during which the value zero is returned once and all non-zero 32-bit values are each returned twice.
 
-[Befunge](/wiki/Category:Befunge "Category:Befunge")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=10 "Edit section: Befunge")]
--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[Befunge](https://rosettacode.org/wiki/Category:Befunge)
+---------------------------------------
 
 The ? instruction usually uses the random number generator in the interpreter's language. The original interpreter is written in C and uses rand().
 
