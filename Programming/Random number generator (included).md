@@ -192,6 +192,10 @@ The RND function generates a pseudo random number greater than or equal to zero,
 
 Windows batch files can use the `%RANDOM%` pseudo-variable which returns a pseudo-random number between 0 and 32767\. Behind the scenes this is just a call to the C runtime's `rand()` function which uses an LCG in this case:
 
+```\LaTeX
+$$\int_\Omega \nabla u \cdot \nabla v~dx = \int_\Omega fv~dx$$
+```
+
 ![equation](https://latex.codecogs.com/gif.latex?X_%7Bn&plus;1%7D%3DX_%7Bn%7D*214013&plus;2531011*%28mod*2%5E%7B15%7D%29)
 
 [BBC BASIC]()
