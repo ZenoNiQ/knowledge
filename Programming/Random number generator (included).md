@@ -910,7 +910,7 @@ random(x) = seed(x) / 2147483647
 
 Oracle Database has two packages that can be used for random numbers generation.
 
-### DBMS_RANDOM[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=68 "Edit section: DBMS RANDOM")]
+### DBMS_RANDOM
 
 The DBMS_RANDOM package provides a built-in random number generator. This package is not intended for cryptography. It will automatically initialize with the date, user ID, and process ID if no explicit initialization is performed. If this package is seeded twice with the same seed, then accessed in the same way, it will produce the same results in both cases.
 
@@ -920,7 +920,7 @@ DBMS_RANDOM.VALUE  --produces numbers in [0,1) with 38 digits of precision.
 DBMS_RANDOM.NORMAL --produces normal distributed numbers with a mean of 0 and a variance of 1
 ```
 
-### DBMS_CRYPTO[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=69 "Edit section: DBMS CRYPTO")]
+### DBMS_CRYPTO
 
 The DBMS_CRYPTO package contains basic cryptographic functions and procedures. The DBMS_CRYPTO.RANDOMBYTES function returns a RAW value containing a cryptographically secure pseudo-random sequence of bytes, which can be used to generate random material for encryption keys. This function is based on the RSA X9.31 PRNG (Pseudo-Random Number Generator).
 
