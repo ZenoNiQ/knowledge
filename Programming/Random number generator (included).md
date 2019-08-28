@@ -196,7 +196,7 @@ Windows batch files can use the `%RANDOM%` pseudo-variable which returns a pseud
 $$\int_\Omega \nabla u \cdot \nabla v~dx = \int_\Omega fv~dx$$
 ```
 
-[equation](https://latex.codecogs.com/gif.latex?X_%7Bn&plus;1%7D%3DX_%7Bn%7D*214013&plus;2531011*%28mod*2%5E%7B15%7D%29)
+![equation](https://latex.codecogs.com/gif.latex?X_%7Bn&plus;1%7D%3DX_%7Bn%7D*214013&plus;2531011*%28mod*2%5E%7B15%7D%29)
 
 [BBC BASIC]()
 -----------------
