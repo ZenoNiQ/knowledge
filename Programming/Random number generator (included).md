@@ -314,17 +314,17 @@ int main()
 }
 ```
 
-[C#](/wiki/Category:C_sharp "Category:C sharp")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=17 "Edit section: C#")]
+[C#](https://rosettacode.org/wiki/Category:C_sharp)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 The .NET Random class says that it uses Knuth's subtractive random number generator algorithm.[[4]](https://msdn.microsoft.com/en-us/library/system.random.aspx#remarksToggle)
 
-[Clojure](/wiki/Category:Clojure "Category:Clojure")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=18 "Edit section: Clojure")]
+[Clojure](https://rosettacode.org/wiki/Category:Clojure)
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 See Java.
 
-[CMake](/wiki/Category:CMake "Category:CMake")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=19 "Edit section: CMake")]
+[CMake](https://rosettacode.org/wiki/Category:CMake)
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 CMake has a random *string* generator.
@@ -342,7 +342,7 @@ CMake 2.6.x has [bug #9851](http://public.kitware.com/Bug/view.php?id=9851); two
 
 CMake 2.8.5 tries a [secure seed](/wiki/Random_number_generator_(device) "Random number generator (device)") (CryptGenRandom or /dev/urandom) or falls back to high-resolution [system time](/wiki/System_time "System time"). Older versions seed the random generator with `time(NULL)`, the current time in seconds.
 
-[Common Lisp](/wiki/Category:Common_Lisp "Category:Common Lisp")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=20 "Edit section: Common Lisp")]
+[Common Lisp](https://rosettacode.org/wiki/Category:Common_Lisp)
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 The easiest way to generate random numbers in Common Lisp is to use the built-in rand function after seeding the random number generator. For example, the first line seeds the random number generator and the second line generates a number from 0 to 9
@@ -354,14 +354,14 @@ The easiest way to generate random numbers in Common Lisp is to use the built-in
 
 [Common Lisp: The Language, 2nd Ed.](https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node133.html) does not specify a specific random number generator algorithm.
 
-[D](/wiki/Category:D "Category:D")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=21 "Edit section: D")]
+[D](https://rosettacode.org/wiki/Category:D)
 -------------------------------------------------------------------------------------------------------------------------------------------
 
 From std.random:
 
 The generators feature a number of well-known and well-documented methods of generating random numbers. An overall fast and reliable means to generate random numbers is the Mt19937 generator, which derives its name from "[Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_twister) with a period of 2 to the power of 19937". In memory-constrained situations, [linear congruential](https://en.wikipedia.org/wiki/Linear_congruential_generator) generators such as MinstdRand0 and MinstdRand might be useful. The standard library provides an alias Random for whichever generator it considers the most fit for the target environment.
 
-[Déjà Vu](/wiki/Category:D%C3%A9j%C3%A0_Vu "Category:Déjà Vu")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=22 "Edit section: Déjà Vu")]
+[Déjà Vu](https://rosettacode.org/wiki/Category:D%C3%A9j%C3%A0_Vu)
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 The standard implementation, `[vu](/wiki/Vu "Vu")`, uses a Mersenne twister.
@@ -370,7 +370,7 @@ The standard implementation, `[vu](/wiki/Vu "Vu")`, uses a Mersenne twister.
 !print random-int # prints a 32-bit random integer
 ```
 
-[Delphi](/wiki/Category:Delphi "Category:Delphi")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=23 "Edit section: Delphi")]
+[Delphi](https://rosettacode.org/wiki/Category:Delphi)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 According to [Wikipedia](https://en.wikipedia.org/wiki/Linear_congruential_generator#Parameters_in_common_use "wp:Linear congruential generator"), Delphi uses a Linear Congruential Generator.
@@ -416,12 +416,12 @@ end;
 end.
 ```
 
-[DWScript](/wiki/Category:DWScript "Category:DWScript")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=24 "Edit section: DWScript")]
+[DWScript](https://rosettacode.org/wiki/Category:DWScript)
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 DWScript currently uses a 64bit [XorShift](https://en.wikipedia.org/wiki/Xorshift "wp:Xorshift") PRNG, which is a fast and light form of GFSR.
 
-[EchoLisp](/wiki/Category:EchoLisp "Category:EchoLisp")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=25 "Edit section: EchoLisp")]
+[EchoLisp](https://rosettacode.org/wiki/Category:EchoLisp)
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 EchoLisp uses an ARC4 (or RCA4) implementation by David Bau, which replaces the JavaScript Math.random(). Thanks to him. [[5]](https://github.com/davidbau/seedrandom). Some examples :
@@ -438,7 +438,7 @@ EchoLisp uses an ARC4 (or RCA4) implementation by David Bau, which replaces the 
 
 ```
 
-[Elena](/wiki/Category:Elena "Category:Elena")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=26 "Edit section: Elena")]
+[Elena](https://rosettacode.org/wiki/Category:Elena)
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ELENA 4.x :
@@ -459,7 +459,7 @@ public program()
 
 ```
 
-[Elixir](/wiki/Category:Elixir "Category:Elixir")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=27 "Edit section: Elixir")]
+[Elixir](https://rosettacode.org/wiki/Category:Elixir)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Elixir does not come with its own module for random number generation. But you can use the appropriate Erlang functions instead. Some examples:
@@ -477,7 +477,7 @@ Elixir does not come with its own module for random number generation. But you c
 
 For further information, read the Erlang section.
 
-[Erlang](/wiki/Category:Erlang "Category:Erlang")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=28 "Edit section: Erlang")]
+[Erlang](https://rosettacode.org/wiki/Category:Erlang)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Random number generator. The method is attributed to B.A. Wichmann and I.D.Hill, in 'An efficient and portable pseudo-random number generator', Journal of Applied Statistics. AS183\. 1982\. Also Byte March 1987.
@@ -522,17 +522,17 @@ Rint = [random](http://erlang.org/doc/man/random.html):uniform(N),
 
 ```
 
-[Euler Math Toolbox](/wiki/Category:Euler_Math_Toolbox "Category:Euler Math Toolbox")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=29 "Edit section: Euler Math Toolbox")]
+[Euler Math Toolbox](https://rosettacode.org/wiki/Category:Euler_Math_Toolbox)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Bays and Durham as describend in Knuth's book.
 
-[Factor](/wiki/Category:Factor "Category:Factor")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=30 "Edit section: Factor")]
+[Factor](https://rosettacode.org/wiki/Category:Factor)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 The default RNG used when the `random` vocabulary is used, is the [Mersenne twister](https://en.wikipedia.org/wiki/Mersenne_twister "wp:Mersenne twister") algorithm [[6]](http://docs.factorcode.org/content/article-random.html). But there are other RNGs available, including [SFMT](https://en.wikipedia.org/wiki/SFMT "wp:SFMT"), the system RNG ([/dev/random](https://en.wikipedia.org/wiki//dev/random "wp:/dev/random") on Unix) and [Blum Blum Shub](https://en.wikipedia.org/wiki/Blum_Blum_Shub "wp:Blum Blum Shub"). It's also very easy to implement your own RNG and integrate it into the system. [[7]](http://docs.factorcode.org/content/article-random-protocol.html)
 
-[Fortran](/wiki/Category:Fortran "Category:Fortran")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=31 "Edit section: Fortran")]
+[Fortran](https://rosettacode.org/wiki/Category:Fortran)
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Fortran has intrinsic random_seed() and random_number() subroutines. Used algorithm of the pseudorandom number generator is compiler dependent (not specified in ISO Fortran Standard, see ISO/IEC 1539-1:2010 (E), 13.7.135 RANDOM NUMBER). For algorithm in GNU gfortran see <https://gcc.gnu.org/onlinedocs/gfortran/RANDOM_005fNUMBER.html> Note that with the GNU gfortran compiler program needs to call random_seed with a random PUT= argument to get a pseudorandom number otherwise the sequence always starts with the same number. Intel compiler ifort reinitializes the seed randomly without PUT argument to random value using the system date and time. Here we are seeding random_seed() with some number obtained from the Linux urandom device.
@@ -564,7 +564,7 @@ end program rosetta_random
 
 ```
 
-[FreeBASIC](/wiki/Category:FreeBASIC "Category:FreeBASIC")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=32 "Edit section: FreeBASIC")]
+[FreeBASIC](https://rosettacode.org/wiki/Category:FreeBASIC)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 FreeBASIC has a Rnd() function which produces a pseudo-random double precision floating point number in the half-closed interval [0, 1) which can then be easily used to generate pseudo-random numbers (integral or decimal) within any range.
@@ -585,12 +585,12 @@ However, a second parameter to the Randomize statement determines which of 5 dif
 
 A parameter of 0 can also be used (and is the default if omitted) which uses algorithm 3 in the -lang fb dialect, 4 in the -lang qb dialect and 1 in the -lang fblite dialect.
 
-[Free Pascal](/wiki/Category:Free_Pascal "Category:Free Pascal")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=33 "Edit section: Free Pascal")]
+[Free Pascal](https://rosettacode.org/wiki/Category:Free_Pascal)
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 FreePascal's function random uses the MersenneTwister (for further details, see the file rtl/inc/system.inc). The random is conform MT19937 and is therefor compatible with e.g. the C++11 MT19937 implementation.
 
-[FutureBasic](/wiki/Category:FutureBasic "Category:FutureBasic")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=34 "Edit section: FutureBasic")]
+[FutureBasic](https://rosettacode.org/wiki/Category:FutureBasic)
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Syntax:
@@ -646,7 +646,7 @@ randomInteger& = ((rnd(65536) - 1)<<15) + rnd(32767)
 
 ```
 
-[GAP](/wiki/Category:GAP "Category:GAP")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=35 "Edit section: GAP")]
+[GAP](https://rosettacode.org/wiki/Category:GAP)
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
 GAP may use two algorithms : MersenneTwister, or algorithm A in section 3.2.2 of TAOCP (which is the default). One may create several *random sources* in parallel, or a global one (based on the TAOCP algorithm).
@@ -675,7 +675,7 @@ Random(SymmetricGroup(200));
 Random(Integers mod 23);
 ```
 
-[Go](/wiki/Category:Go "Category:Go")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=36 "Edit section: Go")]
+[Go](https://rosettacode.org/wiki/Category:Go)
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 Go has two random number packages in the standard library and another package in the "subrepository."
@@ -684,24 +684,24 @@ Go has two random number packages in the standard library and another package in
 2. [crypto/rand](https://golang.org/pkg/crypto/rand/), also in the standard library, says it "implements a cryptographically secure pseudorandom number generator." I think though it should say that it *accesses* a cryptographically secure pseudorandom number generator. It uses `/dev/urandom` on Unix-like systems and the CryptGenRandom API on Windows.
 3. [x/exp/rand](https://godoc.org/golang.org/x/exp/rand) implements the Permuted Congruential Generator which is also described in the issue linked above.
 
-[Golfscript](/wiki/Category:Golfscript "Category:Golfscript")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=37 "Edit section: Golfscript")]
+[Golfscript](https://rosettacode.org/wiki/Category:Golfscript)
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Golfscript uses Ruby's Mersenne Twister algorithm
 
 `~rand` produces a random integer between 0 and n-1, where n is a positive integer piped into the program
 
-[Groovy](/wiki/Category:Groovy "Category:Groovy")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=38 "Edit section: Groovy")]
+[Groovy](https://rosettacode.org/wiki/Category:Groovy)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Same as Java.
 
-[Haskell](/wiki/Category:Haskell "Category:Haskell")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=39 "Edit section: Haskell")]
+[Haskell](https://rosettacode.org/wiki/Category:Haskell)
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 The [Haskell 98 report](https://www.haskell.org/onlinereport/random.html) specifies an interface for pseudorandom number generation and requires that implementations be minimally statistically robust. It is silent, however, on the choice of algorithm.
 
-[Icon](/wiki/Category:Icon "Category:Icon") and [Unicon](/wiki/Category:Unicon "Category:Unicon")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=40 "Edit section: Icon and Unicon")]
+[Icon](https://rosettacode.org/wiki/Category:Icon) and [Unicon](https://rosettacode.org/wiki/Category:Unicon)
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Icon and Unicon both use the same linear congruential random number generator x := (x * 1103515245 + 453816694) mod 2^31\. Icon uses an initial seed value of 0 and Unicon randomizes the initial seed.
@@ -710,57 +710,57 @@ This LCRNG has a number of well documented quirks (see [The Icon Analyst issues 
 
 Additionally, the**Library:** [Icon Programming Library](/wiki/Category:Icon_Programming_Library "Category:Icon Programming Library")[random](https://www.cs.arizona.edu/icon/library/src/procs/random.icn) provides related procedures including a parametrized LCRNG that defaults to the built-in values.
 
-[Io](/wiki/Category:Io "Category:Io")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=41 "Edit section: Io")]
+[Io](https://rosettacode.org/wiki/Category:Io)
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 Io's [Random object](http://iolanguage.org/scm/io/docs/reference/index.html#/Math/Random/Random) uses the Mersenne Twister algorithm.
 
-[Inform 7](/wiki/Category:Inform_7 "Category:Inform 7")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=42 "Edit section: Inform 7")]
+[Inform 7](https://rosettacode.org/wiki/Category:Inform_7)
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Inform's random functions are built on the random number generator exposed at runtime by the virtual machine, which is implementation-defined.
 
-[J](/wiki/Category:J "Category:J")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=43 "Edit section: J")]
+[J](https://rosettacode.org/wiki/Category:J)
 -------------------------------------------------------------------------------------------------------------------------------------------
 
 By default J's `?` primitive (Roll/Deal) uses the Mersenne twister algorithm, but can be set to use a number of other algorithms as detailed on the [J Dictionary page for Roll/Deal](http://www.jsoftware.com/help/dictionary/d640.htm).
 
-[Java](/wiki/Category:Java "Category:Java")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=44 "Edit section: Java")]
+[Java](https://rosettacode.org/wiki/Category:Java)
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Java's `Random` class uses a [Linear congruential formula](https://en.wikipedia.org/wiki/Linear_congruential_generator "wp:Linear congruential generator"), as described in [its documentation](http://java.sun.com/javase/6/docs/api/java/util/Random.html). The commonly used `Math.random()` uses a `Random` object under the hood.
 
-[JavaScript](/wiki/Category:JavaScript "Category:JavaScript")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=45 "Edit section: JavaScript")]
+[JavaScript](https://rosettacode.org/wiki/Category:JavaScript)
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 The only built-in random number generation facility is `Math.random()`, which returns a floating-point number greater than or equal to 0 and less than 1, with approximately uniform distribution. The standard (ECMA-262) does not specify what algorithm is to be used.
 
-[Julia](/wiki/Category:Julia "Category:Julia")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=46 "Edit section: Julia")]
+[Julia](https://rosettacode.org/wiki/Category:Julia)
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Julia's [built-in random-number generation functions](http://docs.julialang.org/en/latest/stdlib/base/#random-numbers), `rand()` etcetera, use the Mersenne Twister algorithm.
 
-[Kotlin](/wiki/Category:Kotlin "Category:Kotlin")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=47 "Edit section: Kotlin")]
+[Kotlin](https://rosettacode.org/wiki/Category:Kotlin)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 As mentioned in the Java entry, the java.util.Random class uses a linear congruential formula and is not therefore cryptographically secure. However, there is also a derived class, java.security.SecureRandom, which can be used for cryptographic purposes
 
-[Lua](/wiki/Category:Lua "Category:Lua")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=48 "Edit section: Lua")]
+[Lua](https://rosettacode.org/wiki/Category:Lua)
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
 Lua's `math.random()` is an interface to the C `rand()` function provided by the OS libc; its implementation varies by platform.
 
-[Mathematica](/wiki/Category:Mathematica "Category:Mathematica")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=49 "Edit section: Mathematica")]
+[Mathematica](https://rosettacode.org/wiki/Category:Mathematica)
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Mathematica 7, by default, uses an Extended Cellular Automaton method ("ExtendedCA") to generate random numbers. The main PRNG functions are `RandomReal[]` and `RandomInteger[]` You can specify alternative generation methods including the Mersenne Twister and a Linear Congruential Generator (the default earlier versions). Information about random number generation is provided at [Mathematica](https://reference.wolfram.com/mathematica/tutorial/RandomNumberGeneration.html#185956823).
 
-[MATLAB](/wiki/Category:MATLAB "Category:MATLAB")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=50 "Edit section: MATLAB")]
+[MATLAB](https://rosettacode.org/wiki/Category:MATLAB)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 MATLAB uses the Mersenne Twister as its default random number generator. Information about how the "rand()" function is utilized is given at [MathWorks](https://www.mathworks.com/help/techdoc/ref/rand.html).
 
-[Maxima](/wiki/Category:Maxima "Category:Maxima")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=51 "Edit section: Maxima")]
+[Maxima](https://rosettacode.org/wiki/Category:Maxima)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Maxima uses a Lisp implementation of the Mersenne Twister. See `? random` for help, or file `share/maxima/5.28.0-2/src/rand-mt19937.lisp` for the source code.
@@ -796,22 +796,22 @@ There are also random generators for several [distributions](https://en.wikipedi
 
 Note: the package `distrib` also has functions starting with `pdf`, `cdf`, `quantile`, `mean`, `var`, `std`, `skewness` or `kurtosis` instead of `random`, except the Cauchy distribution, which does not have [moments](https://en.wikipedia.org/wiki/Moment_(mathematics) "wp:Moment (mathematics)").
 
-[Modula-3](/wiki/Category:Modula-3 "Category:Modula-3")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=52 "Edit section: Modula-3")]
+[Modula-3](https://rosettacode.org/wiki/Category:Modula-3)
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 The Random interface in Modula-3 states that it uses "an additive generator based on Knuth's Algorithm 3.2.2A".
 
-[Nemerle](/wiki/Category:Nemerle "Category:Nemerle")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=53 "Edit section: Nemerle")]
+[Nemerle](https://rosettacode.org/wiki/Category:Nemerle)
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Uses .Net Random class; so, as mentioned under C#, above, implements Knuth's subtractive random number generator algorithm. Random class documentation at [MSDN](https://msdn.microsoft.com/en-us/library/system.random.aspx#remarksToggle).
 
-[NetRexx](/wiki/Category:NetRexx "Category:NetRexx")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=54 "Edit section: NetRexx")]
+[NetRexx](https://rosettacode.org/wiki/Category:NetRexx)
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 As NetRexx runs in the JVM it simply leverages the Java library. See [Java](#Java) for details of the algorithms used.
 
-[Nim](/wiki/Category:Nim "Category:Nim")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=55 "Edit section: Nim")]
+[Nim](https://rosettacode.org/wiki/Category:Nim)
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
 There are two PRNGs provided in the standard library:
@@ -819,22 +819,22 @@ There are two PRNGs provided in the standard library:
 - **random** : Based on xoroshiro128+ (xor/rotate/shift/rotate), see [here](http://xoroshiro.di.unimi.it/).
 - **mersenne** : The Mersenne Twister.
 
-[OCaml](/wiki/Category:OCaml "Category:OCaml")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=56 "Edit section: OCaml")]
+[OCaml](https://rosettacode.org/wiki/Category:OCaml)
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 OCaml provides a module called [Random](http://caml.inria.fr/pub/docs/manual-ocaml/libref/Random.html) in its standard library. It used to be a "Linear feedback shift register" pseudo-random number generator (References: Robert Sedgewick, "Algorithms", Addison-Wesley). It is now (as of version 3.12.0) a "lagged-Fibonacci F(55, 24, +) with a modified addition function to enhance the mixing of bits." It passes the Diehard test suite.
 
-[Octave](/wiki/Category:Octave "Category:Octave")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=57 "Edit section: Octave")]
+[Octave](https://rosettacode.org/wiki/Category:Octave)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 As explained [here](https://www.gnu.org/software/octave/doc/interpreter/Special-Utility-Matrices.html#Special-Utility-Matrices) (see **rand** function), Octave uses the "Mersenne Twister with a period of 2^19937-1".
 
-[Oz](/wiki/Category:Oz "Category:Oz")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=58 "Edit section: Oz")]
+[Oz](https://rosettacode.org/wiki/Category:Oz)
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 Oz provides a binding to the C `[rand](https://www.opengroup.org/onlinepubs/000095399/functions/rand.html)` function as `[OS.rand](http://www.mozart-oz.org/home/doc/system/node56.html#label719)`.
 
-[PARI/GP](/wiki/Category:PARI/GP "Category:PARI/GP")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=59 "Edit section: PARI/GP")]
+[PARI/GP](https://rosettacode.org/wiki/Category:PARI/GP)
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 `random` uses Richard Brent's [xorgens](http://wwwmaths.anu.edu.au/~brent/random.html). It's a member of the xorshift class of PRNGs and provides good, fast pseudorandomness (passing the BigCrush test, unlike the Mersenne twister), but it is not cryptographically strong. As implemented in PARI, its period is "at least.
@@ -846,7 +846,7 @@ random(6)+1
 \\ guaranteed to the random.
 ```
 
-[Pascal](/wiki/Category:Pascal "Category:Pascal")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=60 "Edit section: Pascal")]
+[Pascal](https://rosettacode.org/wiki/Category:Pascal)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 See <#Delphi> and [#Free Pascal](#Free_Pascal).
@@ -860,7 +860,7 @@ Random functions:
 
 ```
 
-[Perl](/wiki/Category:Perl "Category:Perl")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=61 "Edit section: Perl")]
+[Perl](https://rosettacode.org/wiki/Category:Perl)
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Previous to Perl 5.20.0 (May 2014), Perl's `[rand](https://perldoc.perl.org/functions/rand.html)` function will try and call `[drand48](https://www.opengroup.org/onlinepubs/007908775/xsh/drand48.html)`, `[random](https://www.opengroup.org/onlinepubs/000095399/functions/random.html)` or `[rand](https://www.opengroup.org/onlinepubs/000095399/functions/rand.html)` from the C library `[stdlib.h](https://www.opengroup.org/onlinepubs/000095399/basedefs/stdlib.h.html)` in that order.
@@ -871,29 +871,29 @@ Seeds for drand48 are 32-bit and the initial seed uses 4 bytes of data read from
 
 Additionally, there are many PRNG's available as modules. Two good Mersenne Twister modules are [Math::Random::MTwist](https://metacpan.org/pod/Math::Random::MTwist) and [Math::Random::MT::Auto](https://metacpan.org/pod/Math::Random::MT::Auto). Modules supporting other distributions can be found in [Math::Random](https://metacpan.org/pod/Math::Random) and [Math::GSL::Randist](https://metacpan.org/pod/Math::GSL::Randist) among others. CSPRNGs include [Bytes::Random::Secure](https://metacpan.org/pod/Bytes::Random::Secure), [Math::Random::Secure](https://metacpan.org/pod/Math::Random::Secure), [Math::Random::ISAAC](https://metacpan.org/pod/Math::Random::ISAAC), and many more.
 
-[Perl 6](/wiki/Category:Perl_6 "Category:Perl 6")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=62 "Edit section: Perl 6")]
+[Perl 6](https://rosettacode.org/wiki/Category:Perl_6)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 The implementation underlying the `rand` function is platform and VM dependent. The JVM backend uses that platform's SecureRandom class.
 
-[Phix](/wiki/Category:Phix "Category:Phix")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=63 "Edit section: Phix")]
+[Phix](https://rosettacode.org/wiki/Category:Phix)
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 The rand(n) routine returns an integer in the range 1 to n, and rnd() returns a floating point number between 0.0 and 1.0\.
 In both cases the underlying algorithm is just about as trivial as it can be, certainly not suitable for serious cryptographic work.
 There are at least a couple of Mersenne twister components in the archive.
 
-[PHP](/wiki/Category:PHP "Category:PHP")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=64 "Edit section: PHP")]
+[PHP](https://rosettacode.org/wiki/Category:PHP)
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
 PHP has two random number generators: `[rand](http://us3.php.net/manual/en/function.rand.php)`, which uses the underlying C library's `rand` function; and `[mt_rand](http://us3.php.net/manual/en/function.mt-rand.php)`, which uses the [Mersenne twister](https://en.wikipedia.org/wiki/Mersenne_twister "wp:Mersenne twister") algorithm.
 
-[PicoLisp](/wiki/Category:PicoLisp "Category:PicoLisp")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=65 "Edit section: PicoLisp")]
+[PicoLisp](https://rosettacode.org/wiki/Category:PicoLisp)
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 PicoLisp uses a linear congruential generator in the built-in (rand) function, with a multiplier suggested in Knuth's "Seminumerical Algorithms". See the [documentation](http://software-lab.de/doc/refR.html#rand).
 
-[PL/I](/wiki/Category:PL/I "Category:PL/I")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=66 "Edit section: PL/I")]
+[PL/I](https://rosettacode.org/wiki/Category:PL/I)
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Values produced by IBM Visualage PL/I compiler built-in random number generator are uniformly distributed between 0 and 1 [0 <= random < 1]
@@ -905,7 +905,7 @@ seed(x) = mod(950706376 * seed(x-1), 2147483647)
 random(x) = seed(x) / 2147483647
 ```
 
-[PL/SQL](/wiki/Category:PL/SQL "Category:PL/SQL")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=67 "Edit section: PL/SQL")]
+[PL/SQL](https://rosettacode.org/wiki/Category:PL/SQL)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Oracle Database has two packages that can be used for random numbers generation.
@@ -930,22 +930,22 @@ DBMS_CRYPTO.RANDOMINTEGER --produces integers in the BINARY_INTEGER datatype
 DBMS_CRYPTO.RANDOMNUMBER --produces integer in the NUMBER datatype in the range of [0..2**128-1]
 ```
 
-[PowerShell](/wiki/Category:PowerShell "Category:PowerShell")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=70 "Edit section: PowerShell")]
+[PowerShell](https://rosettacode.org/wiki/Category:PowerShell)
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 The [`Get-Random`](https://technet.microsoft.com/en-us/library/dd315402.aspx) cmdlet (part of PowerShell 2) uses the .NET-supplied pseudo-random number generator which uses Knuth's subtractive method; see [C#](#C.23).
 
-[PureBasic](/wiki/Category:PureBasic "Category:PureBasic")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=71 "Edit section: PureBasic")]
+[PureBasic](https://rosettacode.org/wiki/Category:PureBasic)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 PureBasic has two random number generators, `Random()` and `CryptRandom()`. `Random()` uses a RANROT type W generator [[8]](http://www.agner.org/random/theory/chaosran.pdf). `CryptRandom()` uses a very strong PRNG that makes use of a cryptographic safe random number generator for its 'seed', and refreshes the seed if such data is available. The exact method used for `CryptRandom()` is uncertain.
 
-[Python](/wiki/Category:Python "Category:Python")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=72 "Edit section: Python")]
+[Python](https://rosettacode.org/wiki/Category:Python)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Python uses the [Mersenne twister](https://en.wikipedia.org/wiki/Mersenne_twister "wp:Mersenne twister") algorithm accessed via the built-in [random module](https://docs.python.org/library/random.html).
 
-[R](/wiki/Category:R "Category:R")[[edit](/mw/index.php?title=Random_number_generator_(included)&action=edit&section=73 "Edit section: R")]
+[R](https://rosettacode.org/wiki/Category:R)
 -------------------------------------------------------------------------------------------------------------------------------------------
 
 For uniform random numbers, R may use Wichmann-Hill, Marsaglia-multicarry, Super-Duper, Mersenne-Twister, or Knuth-TAOCP (both 1997 and 2002 versions), or a user-defined method. The default is Mersenne Twister.
