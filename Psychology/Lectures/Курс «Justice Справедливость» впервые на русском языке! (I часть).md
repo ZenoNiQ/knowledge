@@ -3,7 +3,7 @@
 
 ENG RU+subs <https://vk.com/wall-95543604_3763>
 
-![RU](https://www.youtube.com/watch?v=-Qa6jmR_p0o)
+[![RU](https://i.ytimg.com/vi/-Qa6jmR_p0o/maxresdefault.jpg)](https://www.youtube.com/watch?v=-Qa6jmR_p0o "video")
 
 Гарвардский курс «Justice/Справедливость» фокусируется на политической философии и затрагивает такие важные философские категории как мораль, этика, нравственность и справедливость.
 
