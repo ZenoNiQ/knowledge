@@ -42,3 +42,5 @@ https://img.youtube.com/vi/<insert-youtube-video-id-here>/maxresdefault.jpg
 All of the above URLs are available over HTTP too. Additionally, the slightly shorter hostname `i3.ytimg.com` works in place of `img.youtube.com` in the example URLs above.
 
 Alternatively, you can use the [YouTube Data API (v3)](https://developers.google.com/youtube/v3/) to get thumbnail images.
+
+[source](https://stackoverflow.com/questions/2068344/how-do-i-get-a-youtube-video-thumbnail-from-the-youtube-api)
