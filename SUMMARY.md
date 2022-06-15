@@ -50,6 +50,8 @@
   * [Досье](useful/dose.md)
   * [Защита девушки от хулиганов](useful/zashita-devushki-ot-khuliganov.md)
   * [Как осадить ватника за 5 секунд](useful/kak-osadit-vatnika-za-5-sekund.md)
+  * [Руководство по выживанию и обороне города](useful/Rukovodstvo-po-vyzhivaniju-i-oborone-goroda.md)
+  * [Советы на всякий случай, а случаи бывают разные...](useful/Sovety%20na%20vsjakij%20sluchaj,%20a%20sluchai%20byvajut%20raznye.md)
   * [Physics](useful/physics/README.md)
     * [Как посчитать секунды](useful/physics/kak-poschitat-sekundy.md)
 * [Здоровье гика](zdorove-gika/README.md)
