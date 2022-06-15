@@ -6,7 +6,7 @@
 * [Industry](industry/README.md)
   * [IT](industry/it/README.md)
     * [Почему США не успокоятся, пока не уничтожат Huawei окончательно — полная хронология событий с 2003 г](industry/it/pochemu-ssha-ne-uspokoyatsya-poka-ne-unichtozhat-huawei-okonchatelno-polnaya-khronologiya-sobytii-s.md)
-    * [Valve: культ Т-образных людей](industry/IT/Valve%20kul't%20T-obraznyh%20ljudej.md)
+    * [Valve: культ Т-образных людей](industry/IT/Valve-kul't-T-obraznyh-ljudej.md)
 * [Kharkov](kharkov/README.md)
   * [Деберц как зеркало харьковской ментальности](kharkov/deberc-kak-zerkalo-kharkovskoi-mentalnosti.md)
   * [Сепаратизм](kharkov/separatizm.md)
