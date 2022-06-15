@@ -1,5 +1,4 @@
-Об отношениях
-==============
+# Об отношениях
 
 [![Галковский](http://img.youtube.com/vi/rGzI0QVtEgk/0.jpg)](http://www.youtube.com/watch?v=rGzI0QVtEgk "")
 
