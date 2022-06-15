@@ -43,6 +43,7 @@
 * [Snob](snob/README.md)
   * [Поколение "вискарик". Придурь стареющего мужика](snob/pokolenie-viskarik.-pridur-stareyushego-muzhika.md)
   * [Секс, трава и классовая ненависть в Оксфорде](snob/seks-trava-i-klassovaya-nenavist-v-oksforde.md)
+  * [Итон и становление современной элиты (перевод 1843 Magazine)](Snob/Iton%20i%20stanovlenie%20sovremennoj%20jelity%20(perevod%201843%20Magazine).md
 * [USSR](ussr/README.md)
   * [Albert Kahn](ussr/albert-kahn.md)
 * [Useful](useful/README.md)
